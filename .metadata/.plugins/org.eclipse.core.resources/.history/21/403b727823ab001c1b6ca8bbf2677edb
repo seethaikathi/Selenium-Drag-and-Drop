@@ -1,0 +1,25 @@
+package javaScript;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ScriptJ {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ADMIN\\eclipse-workspace\\Selenium\\SeleniumProject\\drivers\\chromedriver.exe");
+		WebDriver q = new ChromeDriver();
+		q.get("https://www.flipkart.com/");
+		q.manage().window().maximize();
+		WebElement a = q.findElement(By.xpath("//button[text()='✕']"));
+		a.click();
+		WebElement s = q.findElement(By.xpath("//div[text()='SOCIAL']"));
+		WebElement s1 = q.findElement(By.xpath("//h2[text()='Deals of the Day']"));
+		JavascriptExecutor js = (JavascriptExecutor)q;
+		js.executeScript("arguments[0].scrollIntoView(true)", s);
+		Thread.sleep(3000);
+		js.executeScript("arguments[0].scrollIntoView(false)", s1);
+	}
+
+}

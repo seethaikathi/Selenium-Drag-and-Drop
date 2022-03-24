@@ -1,0 +1,17 @@
+package com.sel;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.driver.chromedriver","C:\\Users\\ADMIN\\eclipse-workspace\\Selenium\\SeleniumProject\\drivers\\chromedriver.exe");
+		WebDriver w = new ChromeDriver();
+		Thread.sleep(4000);
+		w.get("//h3[text()='Login on Twitter / Twitter']");
+		
+	}
+	
+
+}

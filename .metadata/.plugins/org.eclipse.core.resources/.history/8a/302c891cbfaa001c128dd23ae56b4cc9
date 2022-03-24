@@ -1,0 +1,32 @@
+package com.demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Drag {
+	
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ADMIN\\eclipse-workspace\\Selenium\\SeleniumProject\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get(" http://demo.guru99.com/test/drag_drop.html");
+		
+		driver.manage().window().maximize();
+	    WebElement d1 = driver.findElement(By.xpath("//a[text()=' BANK ']"));
+	    WebElement d2 = driver.findElement(By.xpath("//li[@class='placeholder'][1]"));
+	    Actions a = new Actions(driver);
+	    a.dragAndDrop(d1, d2).perform();      
+	    WebElement d3 = driver.findElement(By.xpath("//a[text()=' 5000']"));
+	    WebElement d4 = driver.findElement(By.xpath("//li[@class='placeholder'][1]"));
+	    a.dragAndDrop(d3, d4).perform();
+	    WebElement d5 = driver.findElement(By.xpath("//a[text()=' SALES ']"));
+	    WebElement d6 = driver.findElement(By.xpath("//li[@class='placeholder'][1]"));
+	    a.dragAndDrop(d5, d6).perform();
+	    WebElement d7 = driver.findElement(By.xpath("//a[text()=' 5000']"));
+	    WebElement d8 = driver.findElement(By.xpath("//li[@class='placeholder'][1]"));
+	    a.dragAndDrop(d7, d8).perform();
+	    }
+
+}
